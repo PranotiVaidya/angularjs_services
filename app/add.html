@@ -1,0 +1,65 @@
+
+<head>
+<style> 
+body  {
+    background-image: url("http://marketmybook.in/wp-content/uploads/2013/05/Library-Books.jpg");
+    background-color:beige;
+}
+input[type=text] , input[type=number]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: double;
+    background-color:cornflowerblue;
+    color: white;
+}
+</style>
+</head>
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<div>
+<h2>Add New Book</h2>
+ 
+        <form name = "addForm" novalidate>
+            <table>
+                
+                <tr>
+                    <td>Title</td>
+                    <td>
+                        <input type="text" name="title" ng-model="add.title" size="20" required>
+                        <span  ng-show="addForm.title.$error.required"></span>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>
+                        <input type="number" name="year" ng-model="add.year" size="60" required>
+                        <span  ng-show="addForm.year.$error.required"></span>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fav</td>
+					<td>
+                        <input type="checkbox" ng-model="add.favorite">
+                      
+                    </td>
+                </tr>
+                <tr>
+                    <td> <button ng-disabled ="addForm.id.$invalid || 
+                                               addForm.title.$invalid ||
+                                               addForm.year.$invalid || 
+                                               addForm.favorite.$invalid"
+
+                                            ng-click="AddData()" class="btn btn-success">Add</button>
+                    </td>
+                </tr>
+            </table>
+               <div ng-show="showMe">
+               <div>Book Added</div>
+
+        </form>
+</div>
+

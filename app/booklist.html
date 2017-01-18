@@ -1,0 +1,71 @@
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<style>
+body  {
+    background-image: url("http://marketmybook.in/wp-content/uploads/2013/05/Library-Books.jpg");
+    background-color:beige;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr{background-color: #f2f2f2}
+
+th {
+    background-color:cornflowerblue;
+    color: white;
+}
+tr:hover{background-color:lightgreen}
+</style>
+
+<div>
+
+<br>
+
+
+<!--{{da}}-->
+
+
+<table >
+<tr>
+<th>Id </th>
+<th>Title</th>
+<th>Year</th>
+<th>favourite</th>
+<th>Operation</th>
+
+</tr>
+
+<tr ng-repeat="x in data | filter: searchBook">
+    <td>{{$index+1}}</td>
+
+    <!--- <td><a href="editBook/{{x.id}}" >{{x.title}}</a></td> -->
+
+
+    <td><a ng-href="#/edit/{{x.id}}">{{x.title}}</a></td>
+
+    <td>{{x.year}}</td>
+
+    <td>{{x.favorite}}</td>
+ 
+    <td> <button  id="btn_delete" ng-click="delete(x.id)" class="btn btn-success">Delete</button> </td>
+
+</tr>
+
+</table>
+
+</div>
+
+

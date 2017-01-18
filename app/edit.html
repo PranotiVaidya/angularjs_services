@@ -1,0 +1,71 @@
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <style>
+    body  {
+    background-image: url("http://marketmybook.in/wp-content/uploads/2013/05/Library-Books.jpg");
+    background-color:beige;
+}
+    
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+
+tr{background-color: #f2f2f2}
+
+th {
+    background-color:cornflowerblue;
+    color: white;
+}
+
+tr:hover{background-color:lightgreen}
+</style>
+    <table>
+                <thead>
+                    <tr>
+                         <th>Id </th>
+                         <th>Title </th>
+                        <th>Year </th>
+                        <th>Favroite </th>
+                        <th>Operation</th>
+                    </tr>
+            
+               
+                    <tr ng-repeat="detail in data"><form>
+                        <td>
+                            <div ng-hide="viewField">{{detail.id}}</div>
+                            <div ng-show="modifyField"><input type="number" ng-model="detail.id" /></div>
+                        </td>
+                        <td>
+                            <div ng-hide="viewField">{{detail.title}}</div>
+                            <div ng-show="modifyField"><input type="text" ng-model="detail.title" /></div>
+                        </td>
+                        <td>
+                            <div ng-hide="viewField">{{detail.year}}</div>
+                            <div ng-show="modifyField"><input type="number" ng-model="detail.year" / min="1980" max="2017"></div>
+                        </td>
+                        <td>
+                            <div ng-hide="viewField">{{detail.favorite}}</div>
+                            <div ng-show="modifyField"><input type="checkbox" ng-model="detail.favorite" /></div>
+                        </td>
+                       
+                        <td>
+                            <button ng-hide="viewField" ng-click="modify(detail)"class="btn btn-success" >Update</button>
+                            <button ng-show="modifyField" ng-click="UpdateData(detail)"class="btn btn-success">Save</button>
+                
+                        </td></form>
+                    </tr>
+                
+            </table>

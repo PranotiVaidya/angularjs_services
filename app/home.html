@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<style>
+body  {
+    background-image: url("http://marketmybook.in/wp-content/uploads/2013/05/Library-Books.jpg");
+    
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr{background-color: #f2f2f2}
+
+th {
+    background-color:cornflowerblue;
+    color: white;
+}
+tr:hover{background-color:lightgreen}
+</style>
+
+<div>
+
+<br>
+
+
+<!--{{da}}-->
+
+
+<table >
+<tr>
+<th>Id </th>
+<th>Title</th>
+<th>Year</th>
+<th>favourite</th>
+
+
+</tr>
+
+<tr ng-repeat="x in data | filter: searchBook">
+    <td>{{$index+1}}</td>
+
+    <!--- <td><a href="editBook/{{x.id}}" >{{x.title}}</a></td> -->
+
+
+    <td><a ng-href="#/editBook/{{x.id}}">{{x.title}}</a></td>
+
+    <td>{{x.year}}</td>
+
+    <td>{{x.favorite}}</td>
+ 
+    
+
+</tr>
+
+</table>
+
+</div>
